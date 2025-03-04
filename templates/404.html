@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block title %}Page Not Found{% endblock %}
+
+{% block header %}
+  <h1>Oops! Page Not Found (404)</h1>
+{% endblock %}
+
+{% block content %}
+  <div class="error-container">
+    <div class="error-image">
+      <!-- Cute ASCII cat -->
+      <pre class="cat-ascii">
+   /\_/\  
+  ( o.o ) 
+   > ^ <
+      </pre>
+    </div>
+    <div class="error-message">
+      <p>Oh no! The page you're looking for seems to have gone on vacation.</p>
+      <p>Perhaps it's enjoying a croissant in Paris?</p>
+    </div>
+    <div class="error-action">
+      <a href="{{ url_for('index') }}" class="home-button">Return Home</a>
+    </div>
+  </div>
+
+  <style>
+    .error-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .error-image {
+      margin-bottom: 1.5rem;
+    }
+
+    .cat-ascii {
+      font-family: monospace;
+      font-size: 1.5rem;
+      line-height: 1.2;
+      white-space: pre;
+      color: #ff69b4;
+    }
+
+    .error-message {
+      margin-bottom: 1.5rem;
+    }
+
+    .error-message p {
+      font-size: 1.2rem;
+      color: #555;
+      margin: 0.5rem 0;
+    }
+
+    .home-button {
+      display: inline-block;
+      background-color: #ff69b4;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .home-button:hover {
+      background-color: #e84c9d;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      color: #ff69b4;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .error-container {
+        padding: 1rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .error-message p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+{% endblock %}

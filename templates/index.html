@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}RevoU{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <h1>This is My Users</h1>
+    <ul>
+        {% for user in users %}
+            <li>{{ user }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
